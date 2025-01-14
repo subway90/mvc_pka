@@ -2,38 +2,30 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title><?= (isset($title)) ? $title : WEB_NAME ?></title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title><?= (isset($title)) ? $title : WEB_NAME ?></title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
 
-    <!-- Favicons -->
-    <link rel="shortcut icon" href="<?= URL ?>assets/img/system/favicon.png" type="image/x-icon">
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Amatic+SC:wght@400;700&display=swap"
-        rel="stylesheet">
+  <!-- Favicons -->
+  <link href="https://cntt.epu.edu.vn/Images/favicon.png" rel="icon">
 
-    <!-- Vendor CSS Files -->
-    <link href="<?= URL ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?= URL ?>assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="<?= URL ?>assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="<?= URL ?>assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="<?= URL ?>assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    <!-- Main CSS File -->
-    <link href="<?= URL ?>assets/css/main.css" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="<?=URL?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?=URL?>assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="<?=URL?>assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="<?=URL?>assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="<?=URL?>assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-    <!-- =======================================================
-  * Template Name: Yummy
-  * Template URL: https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- Main CSS File -->
+  <link href="<?=URL?>assets/css/main.css" rel="stylesheet">
+
 </head>
 
 <?=
@@ -41,54 +33,45 @@
 toast_show();
 ?>
 
-<body class="index-page">
+<body class="contact-page">
 
-    <header id="header" class="header d-flex align-items-center sticky-top">
-        <div class="container position-relative d-flex align-items-center justify-content-between">
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container position-relative d-flex align-items-center">
 
-            <a href="<?= URL ?>" class="logo d-flex align-items-center me-auto me-xl-0">
-                <!-- Uncomment the line below if you also wish to use an image logo -->
-                <!-- <img src="assets/img/logo.png" alt=""> -->
-                <h1 class="sitename">Yummy</h1>
-                <span>.</span>
-            </a>
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO-9Cx2kvUrVEbpBdDspON-K894ASoV4BFLQ&s" alt="">
+        <!-- <h1 class="sitename">Company</h1><span>.</span> -->
+      </a>
 
-            <nav id="navmenu" class="navmenu">
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="<?=URL?>trang-chu" class="<?=($page=='home')?'active':''?>">Trang chủ</a></li>
+          <li><a href="<?=URL?>dang-nhap" class="<?=($page=='login')?'active':''?>">Đăng nhập</a></li>
+          <li><a href="<?=URL?>tin-tuc" class="<?=($page=='blog')?'active':''?>">Tin tức</a></li>
+          <li class="dropdown"><a href="about.html"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="testimonials.html">Testimonials</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                    <li><a href="<?= URL ?>" class="<?= ($page == 'home' ? 'active' : '') ?>">Trang chủ<br></a></li>
-                    <li><a href="<?= URL ?>" class="<?= ($page == 'menu' ? 'active' : '') ?>">Thực đơn<br></a></li>
-                    <li><a href="<?= URL ?>" class="<?= ($page == '615161' ? 'active' : '') ?>">Theo dõi đơn hàng<br></a>
-                    </li>
-                    <li><a href="<?= URL ?>" class="<?= ($page == '415151' ? 'active' : '') ?>">Liên hệ<br></a></li>
-                    <li><a href="<?= URL ?>" class="<?= ($page == '15151' ? 'active' : '') ?>">Tin tức<br></a></li>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
                 </ul>
-                <i class="mobile-nav-toggle d-xl-none bi bi-list ms-2"></i>
-            </nav>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
 
-            <?php
-            if (!$_SESSION['user']) { ?>
-                <a class="btn-getstarted" href="<?= URL ?>dang-nhap"><i class="bi bi-person-circle me-2"></i>Đăng nhập</a>
-            <?php } else { ?>
-                <div class="dropdown">
-                    <button class="btn btn-accent rounded-pill dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <span class="fw-light small">xin chào</span> <?= $_SESSION['user']['full_name'] ?>
-                    </button>
-                    <ul class="dropdown-menu w-100">
-                        <li><a class="px-3 dropdown-item" href="#">Thông tin cá nhân</a></li>
-                        <li><a class="px-3 dropdown-item" href="#">Lịch sử mua hàng</a></li>
-                        <?php if($is_admin) {?>
-                        <li><a class="px-3 dropdown-item" href="<?=URL_ADMIN?>">Trang quản trị</a></li>
-                        <?php }?>
-                        <li>
-                            <hr class="px-3 dropdown-divider">
-                        </li>
-                        <li><a class="px-3 dropdown-item" href="<?=URL?>dang-xuat">Đăng xuất</a></li>
-                    </ul>
-                </div>
-            <?php } ?>
+      <div class="header-social-links">
+        <a href="#" class="linkedin"><i class="bi bi-user"></i></a>
+      </div>
 
-        </div>
-    </header>
+    </div>
+  </header>
 
-    <main class="main">
+  <main class="main">

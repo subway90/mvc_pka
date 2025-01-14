@@ -1,33 +1,49 @@
-<!-- Book A Table Section -->
-<section id="book-a-table" class="book-a-table section">
+<!-- Page Title -->
+<div class="page-title accent-background">
+  <div class="container d-lg-flex justify-content-between align-items-center">
+    <h1 class="mb-2 mb-lg-0">Đăng nhập</h1>
+    <nav class="breadcrumbs">
+      <ol>
+        <li><a href="<?=URL?>">Trang chủ</a></li>
+        <li class="current">Tài khoản</li>
+      </ol>
+    </nav>
+  </div>
+</div><!-- End Page Title -->
 
-    <div class="container">
+<!-- Contact Section -->
+<section id="contact" class="contact section">
 
-        <div class="d-flex flex-lg-row flex-column-reverse g-0" data-aos="fade-up" data-aos-delay="100">
+  <div class="container mt-5" data-aos="fade">
 
-            <div class="col-lg-7 reservation-img" style="background-image: url(assets/img/reservation.jpg);"></div>
+    <div class="row justify-content-center gy-5 gx-lg-5">
 
-            <div class="col-lg-5 border rounded-lg-end-3 rounded-top-3 px-lg-3 px-4 py-5 py-lg-0 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
-                <h2 class="text-center mb-3">Đăng nhập</h2>
-                <form action="<?= URL ?>dang-nhap" method="post" role="form" class="">
-                    <div class="row justify-content-center">
-                        <div class="px-0 col-lg-10 col-md-6 form-floating mb-3">
-                            <input name="username" value="<?=$username?>" type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
-                            <label for="floatingInput">Username</label>
-                        </div>
-                        <div class="px-0 col-lg-10 col-md-6 form-floating">
-                            <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                            <label for="floatingPassword">Mật khẩu</label>
-                        </div>
-                        <div class="text-center mt-3">
-                            <button class="btn btn-accent" name="login" type="submit">Đăng nhập</button>
-                        </div>
-                </form>
-                <a class="text-center mt-5" href="<?=URL?>dang-ki">Tạo tài khoản mới</a>
-            </div><!-- End Reservation Form -->
+      <div class="col-lg-4">
+
+        <div class="info">
+          <h3>Chào mừng,</h3>
+          <p>Đăng nhập để sử dụng các tính năng của sinh viên, giảng viên và quản trị viên.</p>
+
+          <form action="<?=URL?>dang-nhap" method="post" class="">
+          <div class="row">
+            <div class="php-email-form">
+                <div class="col-md-12 form-group">
+                    <input type="text" value="<?=$username?>" name="username" class="form-control" id="name" placeholder="Username">
+                </div>
+                <div class="col-md-12 form-group mt-3 mt-md-0">
+                    <input type="password" class="form-control" name="password" id="email" placeholder="Mật khẩu">
+                </div>
+            </div>
+          </div>
+          <div class="text-center mt-3"><button class="btn-submit" name="login" type="submit">Đăng nhập</button></div>
+        </form>
 
         </div>
 
+      </div>
+
     </div>
 
-</section><!-- /Book A Table Section -->
+  </div>
+
+</section><!-- /Contact Section -->
