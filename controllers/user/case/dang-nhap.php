@@ -4,7 +4,7 @@
 
 # [HANDLE]
 // Kiểm tra đã đăng nhập chưa
-if($is_user) route('trang-chu');
+if(author('student')) route('trang-chu');
 
 if(isset($_POST['login'])) {
     // lấy thông tin từ form

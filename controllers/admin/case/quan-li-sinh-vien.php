@@ -48,7 +48,7 @@ if(isset($_arrayURL[1]) && $_arrayURL[1] == 'them') {
         // Kiểm tra username hợp lệ hay không
         if(!preg_match('/^[a-z0-9]+$/', $username)) $error[] = 'Username chỉ chứa các kí tự [a-z][0-9]';
         // Kiểm tra username đã đăng kí chưa
-        if(check_one_exist('username',$username)) $error[] = 'Username này đã tồn tại';
+        if(check_one_exist('user','username',$username)) $error[] = 'Username này đã tồn tại';
         // Kiểm tra độ dài của password
         if(strlen($password) < 7) $error[] = 'Độ dài của mật khẩu phải từ 8 kí tự trở lên';
         // Kiểm tra mật khẩu xác thực
