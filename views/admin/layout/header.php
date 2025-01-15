@@ -50,11 +50,20 @@
                     <ul class="sa-nav sa-nav--sidebar" data-sa-collapse="">
                         <li class="sa-nav__section">
                             <ul class="sa-nav__menu sa-nav__menu--root">
+                                <!-- Dashboard Case -->
+                                <li class="sa-nav__menu-item sa-nav__menu-item--has-icon">
+                                    <a href="<?=URL_ADMIN?>thong-ke" class="sa-nav__link">
+                                        <span class="sa-nav__icon">
+                                            <i class="fas fa-chart-line"></i>
+                                        </span>
+                                        <span class="sa-nav__title">Thống kê</span>
+                                    </a>
+                                </li>
                                 <!-- Student Case -->
                                 <li class="sa-nav__menu-item sa-nav__menu-item--has-icon">
                                     <a href="<?=URL_ADMIN?>quan-li-sinh-vien" class="sa-nav__link">
                                         <span class="sa-nav__icon">
-                                            <i class="fas fa-user"></i>
+                                            <i class="fas fa-user-circle"></i>
                                         </span>
                                         <span class="sa-nav__title">Quản lí sinh viên</span>
                                     </a>
