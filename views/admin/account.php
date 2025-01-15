@@ -8,16 +8,17 @@
                         <nav class="mb-2" aria-label="breadcrumb">
                             <ol class="breadcrumb breadcrumb-sa-simple">
                                 <li class="breadcrumb-item"><a href="<?=URL_ADMIN?>">Quản lí</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Quản lí tài khoản</li>
-                                <li class="breadcrumb-item active" aria-current="page"><?= $showNavList ?></li>
+                                <li class="breadcrumb-item active" aria-current="page">Quản lí sinh viên</li>
+                                <li class="breadcrumb-item active" aria-current="page"><?= 'Danh sách hoạt động' ?></li>
                             </ol>
                         </nav>
                     </div>
                     <div class="col-auto d-flex">
                         <?php if(isset($_GET['blocklist'])) {?>
-                            <a href="<?=URL_ADMIN?>account" class="btn btn-outline-success">Danh sách hoạt động</a>
+                            <a href="<?=URL_ADMIN?>quan-li-sinh-vien" class="btn btn-outline-success">Danh sách hoạt động</a>
                         <?php } else {?>
-                            <a href="<?=URL_ADMIN?>account&blocklist" class="btn btn-outline-danger">Danh sách bị cấm</a>
+                            <a href="<?=URL_ADMIN?>quan-li-sinh-vien/them" class="btn btn-success me-3"><i class="fa fas fa-plus me-2"></i> Thêm</a>
+                            <a href="<?=URL_ADMIN?>quan-li-sinh-vien/danh-sach-xoa" class="btn btn-outline-danger"><i class="fa fas fa-trash me-2"></i>Danh sách xoá</a>
                         <?php }?>
                     </div>
                 </div>
@@ -30,7 +31,7 @@
                     data-sa-search-input="#table-search">
                     <thead>
                         <tr>
-                            <th class="w-min">ID</th>
+                            <th class="w-min">MSSV</th>
                             <th class="min-w-15x">Họ và tên</th>
                             <th class="">SĐT</th>
                             <th class="min-w-10x">Email</th>
@@ -41,26 +42,26 @@
                     </thead>
                     <tbody>
                     <?php
-                    for ($i=0; $i < count($listAccount); $i++) {
-                        extract($listAccount[$i]);
+                    foreach ($list_student as $student) {
+                        extract($student);
                     ?>
                         <tr>
-                            <td> <?= $id ?> </td>
+                            <td> <?= $username ?> </td>
                             <td>
                             <div class="d-flex align-items-center">
                                 <div>
-                                    <img width="40" class="me-3" src="<?='éc éc'?>">
+                                    <img width="40" class="me-3" src="<?= ($avatar) ? $avatar : DEFAULT_IMG_USER ?>">
                                 </div>
                                 <div>
-                                    <?= 'show type' ?>
-                                    <div class="text-muted small"><?= $user ?></div>
+                                    <div class="text-muted small"><?= $full_name ?></div>
+                                    <div class="text-muted small"> <strong>Chuyên ngành: </strong><?= $name_major ?></div>
                                 </div>
                             </div>
                             </td>
                             <td class="text-nowrap"> <?= $phone ?> </td>
                             <td><?= $email ?></td>
                             <td><?= $address ?></td>
-                            <td><?= $dateCreate ?></td>
+                            <td><?= $created_at ?></td>
                             <td>
                                 <div class="dropdown">
                                     <button class="btn btn-sa-muted btn-sm" type="button" id="customer-context-menu-0" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More">

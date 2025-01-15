@@ -52,7 +52,7 @@
                             <ul class="sa-nav__menu sa-nav__menu--root">
                                 <!-- Student Case -->
                                 <li class="sa-nav__menu-item sa-nav__menu-item--has-icon">
-                                    <a href="<?=URL_ADMIN?>account" class="sa-nav__link">
+                                    <a href="<?=URL_ADMIN?>quan-li-sinh-vien" class="sa-nav__link">
                                         <span class="sa-nav__icon">
                                             <i class="fas fa-user"></i>
                                         </span>
