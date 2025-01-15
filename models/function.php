@@ -15,9 +15,9 @@ function author($type) {
 
     if(!in_array($type,['student','teacher','admin'])) die( _s_me_error.'Tên author : <strong> '.$type. '</strong> không tồn tại. Chỉ áp dụng trong [student,teacher,admin]'._e_me_error);
 
-    if($type = 'student') if($_SESSION['user']) return 1;
-    elseif($type = 'teacher') if($_SESSION['user'] && check_one_exist('teacher','username',$_SESSION['user']['username'])) return 1;
-    elseif($type = 'admin') if($_SESSION['user'] && $_SESSION['user']['username'] == 'admin') return 1;
+    if($type == 'student') if($_SESSION['user']) return 1;
+    elseif($type == 'teacher') if($_SESSION['user'] && check_one_exist('teacher','username',$_SESSION['user']['username'])) return 1;
+    elseif($type =='admin') if($_SESSION['user'] && $_SESSION['user']['username'] == 'admin') return 1;
     return 0;
 }
 
