@@ -1,20 +1,6 @@
 <?php
 
 /**
- * Hàm này kiểm tra một field nào đó có value tồn tại hay không
- * @param $field Tên field cần kiểm tra
- * @param $value Giá trị cần kiểm tra
- * @return boolean TRUE nếu tồn tại, ngược lại FALSE khi không tồn tại
- */
-function check_one_exist($field,$value) {
-    $result = pdo_query_one(
-        'SELECT id FROM user WHERE '.$field.' ="'.$value.'"'
-    );
-    if($result) return 1;
-    return 0;
-}
-
-/**
  * Hàm này kiểm tra username có theo yêu cầu kí tự từ a-z, A-Z, 0-9
  * @param string $input
  * @return bool
