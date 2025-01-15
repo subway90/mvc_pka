@@ -35,12 +35,12 @@
         <!-- sa-app__sidebar -->
         <div class="sa-app__sidebar">
             <div class="sa-sidebar">
-                <div class="sa-sidebar__header bg-light bg-opacity-100">
+                <div class="sa-sidebar__header">
                     <a class="sa-sidebar__logo" href="<?=URL_ADMIN?>">
                         <!-- logo -->
                         <div class="sa-sidebar-logo">
                             <span class="text-light">
-                                <img class="w-75" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO-9Cx2kvUrVEbpBdDspON-K894ASoV4BFLQ&s" alt="">
+                                <img class="w-75" src="https://cntt.epu.edu.vn/Uploads/Logo/Logo20181025.png" alt="">
                             </span>
                         </div>
                         <!-- logo / end -->
@@ -52,7 +52,7 @@
                             <ul class="sa-nav__menu sa-nav__menu--root">
                                 <!-- Dashboard Case -->
                                 <li class="sa-nav__menu-item sa-nav__menu-item--has-icon">
-                                    <a href="<?=URL_ADMIN?>thong-ke" class="sa-nav__link">
+                                    <a href="<?=URL_ADMIN?>thong-ke" class="sa-nav__link <?=($page=='dashboard') ? 'bg-dark' : ''?>">
                                         <span class="sa-nav__icon">
                                             <i class="fas fa-chart-line"></i>
                                         </span>
@@ -61,43 +61,36 @@
                                 </li>
                                 <!-- Student Case -->
                                 <li class="sa-nav__menu-item sa-nav__menu-item--has-icon">
-                                    <a href="<?=URL_ADMIN?>quan-li-sinh-vien" class="sa-nav__link">
+                                    <a href="<?=URL_ADMIN?>quan-li-sinh-vien" class="sa-nav__link <?=($page=='student') ? 'bg-dark' : ''?>">
                                         <span class="sa-nav__icon">
                                             <i class="fas fa-user-circle"></i>
                                         </span>
                                         <span class="sa-nav__title">Quản lí sinh viên</span>
                                     </a>
                                 </li>
-                                <!-- Product Case -->
+                                <!-- Blog Case -->
                                 <li class="sa-nav__menu-item sa-nav__menu-item--has-icon" data-sa-collapse-item="sa-nav__menu-item--open">
                                     <a href="#" class="sa-nav__link" data-sa-collapse-trigger="">
-                                        <span class="sa-nav__icon"> <i class="fa fa-mobile"></i></span>
-                                        <span class="sa-nav__title">Products</span>
+                                        <span class="sa-nav__icon"><i class="far fa-newspaper"></i></span>
+                                        <span class="sa-nav__title">Danh mục tin tức</span>
                                         <span class="sa-nav__arrow"><i class="fas fa-caret-left"></i></span>
                                     </a>
                                     <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
+                                    <?php
+                                    $list_category_blog = pdo_query('SELECT * FROM category_blog WHERE status = 1');
+                                    foreach ($list_category_blog as $category) {
+                                    ?>
                                         <li class="sa-nav__menu-item sa-nav__menu-item--has-icon">
-                                            <a href="<?=URL_ADMIN?>series" class="sa-nav__link">
-                                                <span class="sa-nav__icon">
-                                                    <i class="fas fa-boxes"></i>
-                                                </span>
-                                                <span class="sa-nav__title">Series</span>
+                                            <a href="<?=URL_ADMIN?>danh-muc-tin-tuc/<?=$category['slug_category']?>" class="sa-nav__link">
+                                                <span class="sa-nav__icon"><i class="fas fa-sm fa-minus"></i></span>
+                                                <span class="sa-nav__title"><?=$category['name_category']?></span>
                                             </a>
                                         </li>
+                                    <?php }?>
                                         <li class="sa-nav__menu-item sa-nav__menu-item--has-icon">
-                                            <a href="<?=URL_ADMIN?>model" class="sa-nav__link">
-                                                <span class="sa-nav__icon">
-                                                <i class="fas fa-microchip"></i>
-                                                </span>
-                                                <span class="sa-nav__title">Model</span>
-                                            </a>
-                                        </li>
-                                        <li class="sa-nav__menu-item sa-nav__menu-item--has-icon">
-                                            <a href="<?=URL_ADMIN?>detail" class="sa-nav__link">
-                                                <span class="sa-nav__icon">
-                                                <i class="fa fa-mobile"></i>
-                                                </span>
-                                                <span class="sa-nav__title">Detail</span>
+                                            <a href="<?=URL_ADMIN?>danh-muc-tin-tuc/them" class="sa-nav__link">
+                                                <span class="sa-nav__icon"><i class="fas fa-plus"></i></span>
+                                                <span class="sa-nav__title">Thêm mới</span>
                                             </a>
                                         </li>
                                     </ul>

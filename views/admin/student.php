@@ -17,7 +17,7 @@
                         <?php if(isset($_GET['blocklist'])) {?>
                             <a href="<?=URL_ADMIN?>quan-li-sinh-vien" class="btn btn-outline-success">Danh sách hoạt động</a>
                         <?php } else {?>
-                            <a href="<?=URL_ADMIN?>quan-li-sinh-vien/them" class="btn btn-success me-3"><i class="fa fas fa-plus me-2"></i> Thêm</a>
+                            <a href="<?=URL_ADMIN?>quan-li-sinh-vien/them" class="btn btn-outline-primary me-3"><i class="fa fas fa-plus me-2"></i> Thêm</a>
                             <a href="<?=URL_ADMIN?>quan-li-sinh-vien/danh-sach-xoa" class="btn btn-outline-danger"><i class="fa fas fa-trash me-2"></i>Danh sách xoá</a>
                         <?php }?>
                     </div>
