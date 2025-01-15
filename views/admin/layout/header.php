@@ -150,3 +150,9 @@
                 </div>
                 <div class="sa-toolbar__shadow"></div>
             </div>
+
+            
+<!-- Dùng toast -->
+<div class="mt-4">
+<?=toast_show()?>
+</div>
