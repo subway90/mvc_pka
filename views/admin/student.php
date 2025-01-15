@@ -46,22 +46,24 @@
                         extract($student);
                     ?>
                         <tr>
-                            <td> <?= $username ?> </td>
+                            <td> 
+                                <a class="small" href="<?=URL_ADMIN?>chi-tiet-sinh-vien/<?=$username?>"><?= $username ?></a>
+                             </td>
                             <td>
                             <div class="d-flex align-items-center">
                                 <div>
-                                    <img width="40" class="me-3" src="<?= ($avatar) ? $avatar : DEFAULT_IMG_USER ?>">
+                                    <img width="40" class="me-3" src="<?= ($avatar) ? URL.$avatar : DEFAULT_IMG_USER ?>">
                                 </div>
                                 <div>
-                                    <div class="text-muted small"><?= $full_name ?></div>
-                                    <div class="text-muted small"> <strong>Chuyên ngành: </strong><?= $name_major ?></div>
+                                    <div class="text-muted small"><strong><?= $full_name ?></strong></div>
+                                    <div class="text-muted small"> Ngành: <?= $name_major ?></div>
                                 </div>
                             </div>
                             </td>
-                            <td class="text-nowrap"> <?= $phone ?> </td>
-                            <td><?= $email ?></td>
-                            <td><?= $address ?></td>
-                            <td><?= $created_at ?></td>
+                            <td class="text-nowrap"> <?= $phone ?? '<span class="text-muted small">trống</span>' ?> </td>
+                            <td><?= $email ?? '<span class="text-muted small">trống</span>' ?></td>
+                            <td><?= $address ?? '<span class="text-muted small">trống</span>'?></td>
+                            <td><?= format_time($created_at,'DD/MM/YYYY lúc hh:mm:ss') ?></td>
                             <td>
                                 <div class="dropdown">
                                     <button class="btn btn-sa-muted btn-sm" type="button" id="customer-context-menu-0" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More">
@@ -70,12 +72,12 @@
                                         </svg>
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="customer-context-menu-0">
-                                        <li><a class="dropdown-item text-warning" href="<?=URL_ADMIN?>account&detail=<?=$id?>">Sửa chi tiết</a></li>
+                                        <li><a class="dropdown-item text-warning" href="<?=URL_ADMIN?>chi-tiet-sinh-vien/<?=$username?>">Xem chi tiết</a></li>
                                         <li><hr class="dropdown-divider"/></li>
                                         <?php if(!isset($_GET['blocklist'])) {?>
-                                        <li><a class="dropdown-item text-danger" href="<?=URL_ADMIN?>account&delete=2&id=<?=$id?>">Cấm tài khoản</a></li>
+                                        <li><a class="dropdown-item text-danger" href="<?=URL_ADMIN?>chi-tiet-sinh-vien&/<?=$username?>">Cấm tài khoản</a></li>
                                         <?php }else{?>
-                                        <li><a class="dropdown-item text-success" href="<?=URL_ADMIN?>account&delete=1&id=<?=$id?>">Mở tài khoản</a></li>
+                                        <li><a class="dropdown-item text-success" href="<?=URL_ADMIN?>chi-tiet-sinh-vien/<?=$username?>">Mở tài khoản</a></li>
                                         <?php }?>
                                     </ul>
                                 </div>
