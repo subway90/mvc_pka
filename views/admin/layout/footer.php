@@ -33,8 +33,7 @@
     <script src="<?=URL?>assets/admin/js/demo.js"></script>
     <script src="<?=URL?>assets/admin/js/demo-chart-js.js"></script>
     <!-- js custom by subway90 -->
-    <script src="<?=URL?>assets/js/image.js"></script>
-    <script src="<?=URL?>assets/js/custom-copytext.js"></script>
+    <script src="<?=URL?>assets/admin/js/image.js"></script>
     <!-- Summernote JS - CDN Link -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> -->
