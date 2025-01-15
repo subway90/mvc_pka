@@ -37,10 +37,10 @@
 
 <body class="contact-page">
 
-    <header id="header" class="header d-flex align-items-center sticky-top">
+    <header id="header" class="header d-flex align-items-center sticky-top py-3">
         <div class="container position-relative d-flex align-items-center">
 
-            <a href="index.html" class="logo d-flex align-items-center me-auto">
+            <a href="<?=URL?>" class="logo d-flex align-items-center me-auto">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO-9Cx2kvUrVEbpBdDspON-K894ASoV4BFLQ&s"
                     alt="">
                 <!-- <h1 class="sitename">Company</h1><span>.</span> -->
@@ -68,34 +68,30 @@
                         </ul>
                     </li>
                     <?php if (author('student')) { ?>
-                        <li class="dropdown">
-                            <a href="#">
-                                <span>
-                                    <img class="me-2 rounded-circle" width="30" src="https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg" alt="">
-                                </span>
-                                <span><?=$_SESSION['user']['full_name']?></span>
-                                 <i class="bi bi-chevron-down toggle-dropdown"></i>
-                            </a>
-                                <ul>
-                                    <?php if(author('admin')) { ?>
-                                    <li><a href="<?=URL_ADMIN?>">Trang quản trị</a></li>
-                                    <?php }?>
-                                    <li><a href="#">Trang cá nhân</a></li>
-                                    <li><a href="#">Đồ án</a></li>
-                                    <hr>
-                                    <li><a href="<?=URL?>dang-xuat">Đăng xuất</a></li>
-                                </ul>
-                            </li>
+                    <li class="dropdown">
+                        <a href="#">
+                            <span>
+                                <img class="me-2 rounded-circle" width="30" src="https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg" alt="">
+                            </span>
+                            <span><?=$_SESSION['user']['full_name']?></span>
+                                <i class="bi bi-chevron-down toggle-dropdown"></i>
+                        </a>
+                            <ul>
+                                <?php if(author('admin')) { ?>
+                                <li><a href="<?=URL_ADMIN?>">Trang quản trị</a></li>
+                                <?php }?>
+                                <li><a href="#">Trang cá nhân</a></li>
+                                <li><a href="#">Đồ án</a></li>
+                                <hr>
+                                <li><a href="<?=URL?>dang-xuat">Đăng xuất</a></li>
+                            </ul>
+                    </li>
                     <?php } else { ?>
-                        <li><a href="<?= URL ?>dang-nhap" class="<?= ($page == 'login') ? 'active' : '' ?>">Tài khoản</a></li>
+                    <li><a href="<?= URL ?>dang-nhap" class="<?= ($page == 'login') ? 'active' : '' ?>">Tài khoản</a></li>
                     <?php } ?>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
-
-            <div class="header-social-links">
-                <a href="#" class="linkedin"><i class="bi bi-user"></i></a>
-            </div>
 
         </div>
     </header>
