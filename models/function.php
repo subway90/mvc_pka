@@ -1,7 +1,27 @@
 <?php
+# [CONSTAIN]
 
 const _s_me_error = '<div style="color:red">PHÁT HIỆN LỖI:</div><div style="margin-left:10px">';
 const _e_me_error = '</div>';
+
+# [AUTHORIZATION]
+
+/**
+ * Hàm này dùng để xác thực authorizaion khi sử dụng chức năng
+ * @param $type Các loại author : student | teacher | admin
+ * @return bool trả về true nếu đang là author dạng đó, ngược lại sẽ chuyển trả về false
+ */
+function author($type) {
+
+    if(!in_array($type,['student','teacher','admin'])) die( _s_me_error.'Type tuỳ chọn không đúng kiểu trong [student,teacher,admin]'._e_me_error);
+
+    if($type = 'student') if($_SESSION['user']) return 1;
+    elseif($type = 'teacher') if(check_one_exist('teacher','username',$_SESSION['user']['username'])) return 1;
+    elseif($type = 'admin') if($_SESSION['user']['username'] == 'admin') return 1;
+    return 0;
+}
+
+# [FUNC]
 
 /**
  * Load view từ views/user
@@ -13,7 +33,6 @@ function view($type,$title,$page,$data) {
     if($type != 'admin' && $type != 'user') die(_s_me_error.'Type khai báo <strong>'.$type.'</strong> không phù hợp trong mảng [user,admin] '._e_me_error);
     if(file_exists('views/'.$type.'/'.$page.'.php')) {
         if(!empty($data)) extract($data);
-        require_once 'models/'.$type.'/header.php';
         require_once 'views/'.$type.'/layout/header.php';
         require_once 'views/'.$type.'/'.$page.'.php';
         require_once 'views/'.$type.'/layout/footer.php';
@@ -45,7 +64,6 @@ function model($type,$name_model) {
 function view_404($type) {
     if($type != 'admin' && $type != 'user') die(_s_me_error.'Type khai báo <strong>'.$type.'</strong> không phù hợp trong mảng [user,admin] '._e_me_error);
     if(file_exists('views/'.$type.'/404.php')) {
-        require_once 'models/'.$type.'/header.php';
         require_once 'views/'.$type.'/layout/header.php';
         require_once 'views/'.$type.'/404.php';
         require_once 'views/'.$type.'/layout/footer.php';
@@ -242,9 +260,9 @@ return preg_replace('/[^a-zA-Z0-9_. @àáảãạâầấẩẫậêềếểễ
  * @param $value Giá trị cần kiểm tra
  * @return boolean TRUE nếu tồn tại, ngược lại FALSE khi không tồn tại
  */
-function check_one_exist($field,$value) {
+function check_one_exist($table,$field,$value) {
     $result = pdo_query_one(
-        'SELECT id FROM user WHERE '.$field.' ="'.$value.'"'
+        'SELECT '.$field.' FROM '.$table.' WHERE '.$field.' ="'.$value.'"'
     );
     if($result) return 1;
     return 0;

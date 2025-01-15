@@ -67,7 +67,7 @@
                             </li>
                         </ul>
                     </li>
-                    <?php if ($is_user) { ?>
+                    <?php if (author('student')) { ?>
                         <li class="dropdown">
                             <a href="#">
                                 <span>
@@ -77,7 +77,7 @@
                                  <i class="bi bi-chevron-down toggle-dropdown"></i>
                             </a>
                                 <ul>
-                                    <?php if($is_admin) { ?>
+                                    <?php if(author('admin')) { ?>
                                     <li><a href="<?=URL_ADMIN?>">Trang quản trị</a></li>
                                     <?php }?>
                                     <li><a href="#">Trang cá nhân</a></li>
