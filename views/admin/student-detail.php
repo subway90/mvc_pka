@@ -36,7 +36,7 @@
                                                 <label for="color">Họ và tên <span class="text-danger">&#10033;</span></label>
                                             </div>
                                             <div class="col-12 form-floating mb-2 pb-3">
-                                                <input name="email" value="<?=$student['email']?>" type="text" class="form-control rounded rounded-5" id="color" placeholder="name@example.com" readonly>
+                                                <input name="email" value="<?=$student['email'] ?? '(trống)'?>" type="text" class="form-control rounded rounded-5" id="color" placeholder="name@example.com" readonly>
                                                 <label for="color">Email <span class="text-danger">&#10033;</span></label>
                                             </div>
                                             <div class="col-12 form-floating mb-2 pb-3">
@@ -44,7 +44,7 @@
                                                 <label for="color">Số điện thoại <span class="text-danger">&#10033;</span></label>
                                             </div>
                                             <div class="col-12 form-floating mb-2 pb-3">
-                                                <input name="address" value="<?=$student['address']?>" type="text" class="form-control rounded rounded-5" id="color" placeholder="name@example.com" readonly>
+                                                <input name="address" value="<?=$student['address'] ?? '(trống)'?>" type="text" class="form-control rounded rounded-5" id="color" placeholder="name@example.com" readonly>
                                                 <label for="color">Địa chỉ <span class="text-danger">&#10033;</span></label>
                                             </div>
                                             <div class="col-12 form-floating mb-2 pb-3">
