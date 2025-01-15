@@ -29,6 +29,7 @@ if(isset($_POST['login'])) {
                     // Chuyển hướng theo role
                     if($_SESSION['user']['role'] == 0) {
                         header('Location: '.URL.'admin');
+                        toast_create('success','<i class="bi bi-check-circle me-2"></i> Đăng nhập thành công');
                         exit;
                     }else {
                         header('Location: '.URL);
