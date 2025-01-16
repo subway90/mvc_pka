@@ -20,7 +20,7 @@ $data = [
     'status_page' => $status_page,
     'slug_category' => $slug_category,
     'name_category' => $category_blog['name_category'],
-    'list_blog' => list_blog($category_blog['id'],$status_page),
+    'list_blog' => list_blog($category_blog['id_category'],$status_page),
 ];
 
 # [RENDER]
