@@ -1,5 +1,5 @@
 <div id="top" class="sa-app__body">
-<form action="<?=URL_ADMIN?>quan-li-sinh-vien/them" method="post" enctype="multipart/form-data">
+<form action="<?=URL_ADMIN?>them-sinh-vien" method="post" enctype="multipart/form-data">
     <div class="mx-sm-2 px-2 px-sm-3 px-xxl-4 pb-6">
                     <div class="container container--max--xl">
                         <div class="py-5">
