@@ -80,7 +80,7 @@
                                     $list_category_blog = pdo_query('SELECT * FROM category_blog WHERE status = 1');
                                     foreach ($list_category_blog as $category) {
                                     ?>
-                                        <li class="sa-nav__menu-item sa-nav__menu-item--has-icon">
+                                        <li class="sa-nav__menu-item sa-nav__menu-item--has-icon <?=($category['slug_category']==$slug_category) ? 'bg-dark' : ''?>">
                                             <a href="<?=URL_ADMIN?>danh-muc-tin-tuc/<?=$category['slug_category']?>" class="sa-nav__link">
                                                 <span class="sa-nav__icon"><i class="fas fa-sm fa-minus"></i></span>
                                                 <span class="sa-nav__title"><?=$category['name_category']?></span>
