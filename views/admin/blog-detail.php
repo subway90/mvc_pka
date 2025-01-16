@@ -9,7 +9,7 @@
                                 <ol class="breadcrumb breadcrumb-sa-simple">
                                 <li class="breadcrumb-item"><a href="<?=URL_ADMIN?>">Quản lí</a></li>
                                 <li class="breadcrumb-item"><a href="<?=URL_ADMIN.'danh-muc-tin-tuc/'.$slug_category?>"><?= $name_category ?></a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Thêm bài viết mới</li>
+                                <li class="breadcrumb-item active" aria-current="page"><?= $name_page ?></li>
                                 </ol>
                             </nav>
                         </div>

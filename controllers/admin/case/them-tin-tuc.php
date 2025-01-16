@@ -59,6 +59,7 @@ if(isset($_POST['create'])) {
 
 # [DATA]
 $data = [
+    'name_page' => 'Thêm tin tức',
     'image_old' => $image_old,
     'name_blog' => $name_blog,
     'short_description' => $short_description,
@@ -68,4 +69,4 @@ $data = [
 ];
 
 # [RENDER]
-view('admin','Danh sách tin tức','blog-add',$data);
+view('admin','Danh sách tin tức','blog-detail',$data);
