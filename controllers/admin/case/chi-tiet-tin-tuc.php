@@ -51,7 +51,7 @@ if(isset($_POST['update'])) {
         // Thực hiện lệnh với các tham số
         $stmt->execute([
             $id_category,
-            $_SESSION['user']['id'],
+            $_SESSION['user']['id_user'],
             $name_blog,
             create_slug($name_blog),
             $short_description,

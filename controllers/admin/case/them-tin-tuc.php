@@ -45,8 +45,8 @@ if(isset($_POST['create'])) {
         $stmt = pdo_get_connection()->prepare('INSERT INTO blog (id_category, id_user, name_blog, slug_blog, short_description, description, image) VALUES (?, ?, ?, ?, ?, ?, ?)');
         // Thực hiện lệnh với các tham số
         $stmt->execute([
-            $category_blog['id'],
-            $_SESSION['user']['id'],
+            $category_blog['id_category'],
+            $_SESSION['user']['id_user'],
             $name_blog,
             create_slug($name_blog),
             $short_description,
