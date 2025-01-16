@@ -1,5 +1,9 @@
 <div id="top" class="sa-app__body">
-    <form action="<?= URL_ADMIN ?>them-tin-tuc/<?=$slug_category?>" method="post" enctype="multipart/form-data">
+<?php if(isset($update_page)) {?>
+    <form action="<?= URL_ADMIN.'chi-tiet-tin-tuc/'.$slug_blog?>" method="post" enctype="multipart/form-data">
+<?php }else {?>
+    <form action="<?= URL_ADMIN.'them-tin-tuc/'.$slug_category?>" method="post" enctype="multipart/form-data">
+<?php }?>
         <div class="mx-sm-2 px-2 px-sm-3 px-xxl-4 pb-6">
             <div class="container container--max--xl">
                 <div class="py-5">
@@ -13,9 +17,13 @@
                                 </ol>
                             </nav>
                         </div>
-                        <div class="col-auto d-flex"><a href="<?=URL_ADMIN.'danh-muc-tin-tuc/'.$slug_category?>"
-                                class="btn btn-secondary me-3">Hủy</a>
+                        <div class="col-auto d-flex">
+                            <a href="<?=URL_ADMIN.'danh-muc-tin-tuc/'.$slug_category?>" class="btn btn-secondary me-3">Hủy</a>
+                        <?php if(isset($update_page)) {?>
+                            <button name="update" class="btn btn-warning" type="submit">Cập nhật</button>
+                        <?php }else {?>
                             <button name="create" class="btn btn-success" type="submit">Lưu</button>
+                        <?php }?>
                         </div>
                     </div>
                 </div>
