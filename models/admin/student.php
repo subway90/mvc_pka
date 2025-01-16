@@ -7,7 +7,7 @@ function get_list_student() {
         JOIN user u
         ON s.username = u.username
         JOIN major m
-        ON s.id_major = m.id
+        ON s.id_major = m.id_major
         WHERE u.status = 1
         ORDER BY u.created_at DESC
     '
@@ -21,7 +21,7 @@ function get_one_student($username) {
         JOIN user u
         ON s.username = u.username
         JOIN major m
-        ON s.id_major = m.id
+        ON s.id_major = m.id_major
         WHERE u.status = 1
         AND u.username = "'.$username.'"
         ORDER BY u.created_at DESC

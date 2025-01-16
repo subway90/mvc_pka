@@ -53,7 +53,7 @@
                                             <div class="col-12 form-floating mb-2 pb-3">
                                                 <select name="major" class="form-select" id="major" aria-label="Floating label select example">
                                                     <?php foreach ($list_major as $option) { ?>
-                                                        <option <?= ($major == $option['id']) ? 'selected' : '' ?> value="<?= $option['id'] ?>" ><?=$option['name_major']?></option>
+                                                        <option <?= ($major == $option['id_major']) ? 'selected' : '' ?> value="<?= $option['id_major'] ?>" ><?=$option['name_major']?></option>
                                                         <?php }?>
                                                 </select>
                                                 <label for="major">Chuyên ngành học</label>
