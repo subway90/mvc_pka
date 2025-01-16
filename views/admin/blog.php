@@ -53,7 +53,9 @@
                                     <img width="100" class="me-3" src="<?= ($image) ? URL.$image : DEFAULT_IMG_BLOG ?>">
                                 </div>
                                 <div>
-                                    <div class="text-dark small"><strong><?= $name_blog ?></strong></div>
+                                    <div class="small">
+                                        <a class="text-dark" href="<?=URL_ADMIN?>chi-tiet-tin-tuc/<?=$slug_blog?>"><strong><?= $name_blog ?></strong></a>
+                                    </div>
                                     <div class="text-muted small"> <?= $short_description ?></div>
                                     <div class="text-muted small fst-italic"> <?=$updated_at ? 'Đã cập nhật: '.format_time($updated_at,'DD/MM/YYYY lúc hh:mm:ss') : '(Chưa có cập nhật)' ?></div>
                                 </div>
@@ -74,12 +76,12 @@
                                         </svg>
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="customer-context-menu-0">
-                                        <li><a class="dropdown-item text-warning" href="<?=URL_ADMIN?>chi-tiet-tin-tuc/<?=$slug_blog?>">Xem chi tiết</a></li>
+                                        <li><a class="dropdown-item text-warning" href="<?=URL_ADMIN?>chi-tiet-tin-tuc/<?=$slug_blog?>"><i class="fa fa-sm me-1 fas fa-eye"></i> Xem chi tiết</a></li>
                                         <li><hr class="dropdown-divider"/></li>
-                                        <?php if(!isset($_GET['blocklist'])) {?>
-                                        <li><a class="dropdown-item text-danger" href="<?=URL_ADMIN?>chi-tiet-tin-tuc&/<?=$slug_blog?>">Cấm tài khoản</a></li>
+                                        <?php if($status_page) {?>
+                                        <li><a class="dropdown-item text-danger" href="<?=URL_ADMIN?>danh-muc-tin-tuc/<?=$slug_category?>/xoa/<?=$id_blog?>"><i class="fa fa-sm me-1 fas fa-trash"></i> Xoá</a></li>
                                         <?php }else{?>
-                                        <li><a class="dropdown-item text-success" href="<?=URL_ADMIN?>chi-tiet-tin-tuc/<?=$slug_blog?>">Mở tài khoản</a></li>
+                                        <li><a class="dropdown-item text-success" href="<?=URL_ADMIN?>danh-muc-tin-tuc/<?=$slug_category?>/khoi-phuc/<?=$id_blog?>"><i class="fa fa-sm me-1 fas fa-trash-restore"></i> Khôi phục</a></li>
                                         <?php }?>
                                     </ul>
                                 </div>
