@@ -15,13 +15,17 @@ function check_name_blog_exist($name_blog,$slug_category) {
     );
 }
 
-function list_blog($id_category) {
+/**
+ * Hàm này để lấy danh sách tin tức theo ID Category và Trạng thái
+ * @param mixed $id_category ID Danh mục
+ * @param mixed $status Trạng thái
+ * @return array
+ */
+function list_blog($id_category,$status) {
     return 
     pdo_query('SELECT * 
-    FROM blog b
-    JOIN user u
-    ON b.id_user = u.id
+    FROM blog
     WHERE id_category = '.$id_category.'
-    AND b.status = 1 
-    ORDER BY b.created_at DESC');
+    AND status = '.$status.'
+    ORDER BY created_at DESC');
 }

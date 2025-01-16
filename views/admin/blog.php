@@ -9,12 +9,15 @@
                             <ol class="breadcrumb breadcrumb-sa-simple">
                                 <li class="breadcrumb-item"><a href="<?=URL_ADMIN?>">Quản lí</a></li>
                                 <li class="breadcrumb-item active" aria-current="page"><?= $name_category ?></li>
+                                <?php if(!$status_page) { ?>
+                                <li class="breadcrumb-item active" aria-current="page">Danh sách xoá</li>
+                                <?php }?>
                             </ol>
                         </nav>
                     </div>
                     <div class="col-auto d-flex">
-                        <?php if(isset($_GET['blocklist'])) {?>
-                            <a href="<?=URL_ADMIN?>danh-muc-tin-tuc/<?=$slug_category?>" class="btn btn-outline-success">Danh sách hoạt động</a>
+                        <?php if(!$status_page) {?>
+                            <a href="<?=URL_ADMIN?>danh-muc-tin-tuc/<?=$slug_category?>" class="btn btn-outline-success">Quay về Danh sách hoạt động</a>
                         <?php } else {?>
                             <a href="<?=URL_ADMIN?>them-tin-tuc/<?=$slug_category?>" class="btn btn-outline-primary me-3"><i class="fa fas fa-plus me-2"></i> Thêm</a>
                             <a href="<?=URL_ADMIN?>danh-muc-tin-tuc/<?=$slug_category?>/danh-sach-xoa" class="btn btn-outline-danger"><i class="fa fas fa-trash me-2"></i>Danh sách xoá</a>
