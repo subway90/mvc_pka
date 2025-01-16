@@ -30,9 +30,8 @@
                     data-sa-search-input="#table-search">
                     <thead>
                         <tr>
-                            <th class="w-min">ID</th>
                             <th class="min-w-15x">Thông tin</th>
-                            <th class="min-w-10x">Người đăng</th>
+                            <!-- <th class="min-w-10x">Người đăng</th> -->
                             <th class="min-w-5x">Trạng thái</th>
                             <th class="min-w-5x">Lượt xem</th>
                             <th> Ngày tạo</th>
@@ -45,9 +44,6 @@
                         extract($blog);
                     ?>  
                         <tr>
-                            <td> 
-                                <span class="small"><?= $id ?></span>
-                             </td>
                             <td>
                             <div class="d-flex align-items-center">
                                 <div>
@@ -60,7 +56,10 @@
                                 </div>
                             </div>
                             </td>
-                            <td><?= $user ?? '<span class="text-muted small">trống</span>' ?></td>
+                            <!-- <td>
+                                    <img width="40" class="me-3 rounded-circle" src="<?= ($avatar) ? URL.$avatar : DEFAULT_IMG_USER ?>">
+                                    <span class="text-muted small"><strong><?= $full_name ?></strong></span>
+                            </td> -->
                             <td class="text-nowrap"> <?= $status ? '<div class="badge badge-sa-success">Hoạt động</div>' : '<div class="badge badge-sa-success">Ẩn</div>' ?> </td>
                             <td><?= $address ?? '<span class="text-muted small">trống</span>'?></td>
                             <td><?= format_time($created_at,'DD/MM/YYYY lúc hh:mm:ss') ?></td>

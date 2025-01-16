@@ -1,4 +1,6 @@
 <?php
+# [MODEL]
+model('admin','blog');
 
 # [HANDLE]
 $slug_category = $_arrayURL[1];
@@ -10,7 +12,7 @@ if(!$category_blog) view_404('admin');
 $data = [
     'slug_category' => $slug_category,
     'name_category' => $category_blog['name_category'],
-    'list_blog' => pdo_query('SELECT * FROM blog WHERE id_category = '.$category_blog['id'].' ORDER BY created_at DESC')
+    'list_blog' => list_blog($category_blog['id']),
 ];
 
 # [RENDER]

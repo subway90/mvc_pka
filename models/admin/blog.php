@@ -14,3 +14,13 @@ function check_name_blog_exist($name_blog,$slug_category) {
         AND b.name_blog ="'.$name_blog.'"'
     );
 }
+
+function list_blog($id_category) {
+    return 
+    pdo_query('SELECT * 
+    FROM blog b
+    JOIN user u
+    ON b.id_user = u.id
+    WHERE id_category = '.$id_category.' 
+    ORDER BY b.created_at DESC');
+}
