@@ -64,7 +64,7 @@
                                     <span class="text-muted small"><strong><?= $full_name ?></strong></span>
                             </td> -->
                             <td class="text-nowrap"> <?= ($status == 1) ? '<div class="badge badge-sa-success">Hoạt động</div>' : '<div class="badge badge-sa-warning">Ẩn</div>' ?> </td>
-                            <td><?= $address ?? '<span class="text-muted small">trống</span>'?></td>
+                            <td><span class="text-muted small"><?= $view ?></span></td>
                             <td><?= format_time($created_at,'DD/MM/YYYY lúc hh:mm:ss') ?></td>
                             <td>
                                 <div class="dropdown">
