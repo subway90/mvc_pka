@@ -5,7 +5,6 @@ model('admin','blog');
 # [VARIABLE]
 $image_old = $name_blog = $short_description = $description = '';
 $error = [];
-$status = 0;
 
 # [HANDLE]
 $slug_category = $_arrayURL[1];
@@ -20,9 +19,9 @@ if(isset($_POST['create'])) {
     $name_blog = $_POST['name_blog'];
     $description = $_POST['description'];
     $short_description = $_POST['short_description'];
-    $status = $_POST['status'];
     $image = $_FILES['image'];
     $image_old = ($_POST['image_old']) ?? '';
+
     
     // Nếu có ảnh mới, thì sẽ lưu ảnh và lưu path vào biến $image_old
     if($image['tmp_name']) {
@@ -43,7 +42,7 @@ if(isset($_POST['create'])) {
     if($error) toast_create('danger',$error[0]);
     //tạo người dùng
     else {
-        $stmt = pdo_get_connection()->prepare('INSERT INTO blog (id_category, id_user, name_blog, slug_blog, short_description, description, image, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
+        $stmt = pdo_get_connection()->prepare('INSERT INTO blog (id_category, id_user, name_blog, slug_blog, short_description, description, image) VALUES (?, ?, ?, ?, ?, ?, ?)');
         // Thực hiện lệnh với các tham số
         $stmt->execute([
             $category_blog['id'],
@@ -53,9 +52,7 @@ if(isset($_POST['create'])) {
             $short_description,
             $description,
             $image_old,
-            $status
         ]);
-        header('Location: '.URL_ADMIN.'danh-muc-tin-tuc/'.$slug_category);
         toast_create('success','Tạo bài viết thành công');
     }
 }
@@ -66,7 +63,6 @@ $data = [
     'name_blog' => $name_blog,
     'short_description' => $short_description,
     'description' => $description,
-    'status' => $status,
     'slug_category' => $slug_category,
     'name_category' => $category_blog['name_category'],
 ];

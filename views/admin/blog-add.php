@@ -47,23 +47,15 @@
                                     </div>
                                     <div class="col-8">
                                         <div class="col-12 form-floating mb-5">
-                                            <select name="status" class="form-select rounded rounded-5" id="status"
-                                                aria-label="ttg">
-                                                <option <?= ($status==1) ? 'selected' : '' ?> value="1">Hiện</option>
-                                                <option <?= ($status==0) ? 'selected' : '' ?> value="0">Ẩn</option>
-                                            </select>
-                                            <label for="status">Trạng thái</label>
-                                        </div>
-                                        <div class="col-12 form-floating mb-5">
                                             <input name="name_blog" value='<?= $name_blog ?>' type="text"
                                                 class="form-control rounded rounded-5" id="titleNews"
                                                 placeholder="titleNews@example.com">
                                             <label for="titleNews">Tên bài viết</label>
                                         </div>
-                                    </div>
-                                    <div class="col-12 px-3 mb-5">
-                                        <textarea name="short_description" class="form-control" placeholder="Leave a comment here"
-                                            id="shortDecribe" style="height: 200px"><?= $short_description ?></textarea>
+                                        <div class="col-12 form-floating">
+                                            <textarea name="short_description" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 200"><?=$short_description?></textarea>
+                                            <label for="floatingTextarea2">Mô tả ngắn</label>
+                                        </div>
                                     </div>
                                     <div class="col-12 px-3 mb-5">
                                         <textarea name="description" class="form-control" placeholder="Leave a comment here"

@@ -21,6 +21,7 @@ function list_blog($id_category) {
     FROM blog b
     JOIN user u
     ON b.id_user = u.id
-    WHERE id_category = '.$id_category.' 
+    WHERE id_category = '.$id_category.'
+    AND b.status = 1 
     ORDER BY b.created_at DESC');
 }
