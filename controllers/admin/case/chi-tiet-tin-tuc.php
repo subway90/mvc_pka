@@ -47,7 +47,7 @@ if(isset($_POST['update'])) {
     if($error) toast_create('danger',$error[0]);
     //tạo người dùng
     else {
-        $stmt = pdo_get_connection()->prepare('UPDATE blog SET id_category = ?, id_user = ?, name_blog = ?, slug_blog = ?, short_description = ?, description = ?, image = ? WHERE id_blog = ?');
+        $stmt = pdo_get_connection()->prepare('UPDATE blog SET id_category = ?, id_user = ?, name_blog = ?, slug_blog = ?, short_description = ?, description = ?, image = ?, updated_at = current_timestamp() WHERE id_blog = ?');
         // Thực hiện lệnh với các tham số
         $stmt->execute([
             $id_category,
