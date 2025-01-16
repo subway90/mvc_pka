@@ -250,7 +250,7 @@ function toast_show() {
  */
 function clear_input($input) {
 // Giữ lại chữ cái, số, dấu gạch dưới, dấu chấm, dấu at, dấu cách và các ký tự tiếng Việt
-return preg_replace('/[^a-zA-Z0-9_. @àáảãạâầấẩẫậêềếểễệîìíỉĩịôồốổỗộơờớởỡợđÀÁẢÃẠÂẦẤẨẪẬÊỀẾỂỄỆÎÌÍỈĨỊÔỒỐỔỖỘƠỜỚỞỠỢĐ]/u', '', $input);
+return preg_replace('/[^a-zA-Z0-9_. -@àáảãạâầấẩẫậêềếểễệîìíỉĩịôồốổỗộơờớởỡợđÀÁẢÃẠÂẦẤẨẪẬÊỀẾỂỄỆÎÌÍỈĨỊÔỒỐỔỖỘƠỜỚỞỠỢĐ]/u', '', $input);
 }
 
 
