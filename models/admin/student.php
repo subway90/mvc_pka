@@ -16,7 +16,7 @@ function get_list_student() {
 
 function get_one_student($username) {
     return pdo_query_one(
-        'SELECT u.username username, u.full_name full_name, u.email email, u.address address, u.avatar avatar, u.phone phone, u.created_at created_at, m.name_major name_major, s.id_major id_major
+        'SELECT *
         FROM student s
         JOIN user u
         ON s.username = u.username
@@ -24,7 +24,6 @@ function get_one_student($username) {
         ON s.id_major = m.id_major
         WHERE u.status = 1
         AND u.username = "'.$username.'"
-        ORDER BY u.created_at DESC
     '
     );
 }
