@@ -68,6 +68,15 @@
                                         <span class="sa-nav__title">Quản lí sinh viên</span>
                                     </a>
                                 </li>
+                                <!-- Teacher Case -->
+                                <li class="sa-nav__menu-item sa-nav__menu-item--has-icon">
+                                    <a href="<?=URL_ADMIN?>quan-li-giang-vien" class="sa-nav__link <?=($page=='teacher') ? 'bg-dark' : ''?>">
+                                        <span class="sa-nav__icon">
+                                            <i class="fas fa-address-card"></i>
+                                        </span>
+                                        <span class="sa-nav__title">Quản lí giảng viên</span>
+                                    </a>
+                                </li>
                                 <!-- Project Case -->
                                 <li class="sa-nav__menu-item sa-nav__menu-item--has-icon">
                                     <a href="<?=URL_ADMIN?>quan-li-do-an" class="sa-nav__link <?=($page=='project') ? 'bg-dark' : ''?>">
