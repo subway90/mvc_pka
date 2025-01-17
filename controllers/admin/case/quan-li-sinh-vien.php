@@ -17,8 +17,8 @@ if(isset($_arrayURL[1]) && $_arrayURL[1] == 'xoa') {
         // kiểm tra username có tồn tại không
         if(check_user_exist_by_status($username,1)) {
             update_status_user($username,0);
-            toast_create('success','Xoá thành công user với ID = '.$username);
-        }else toast_create('danger','Bài viết ID = '.$username.' không tồn tại');
+            toast_create('success','Xoá thành công sinh viên với ID = '.$username);
+        }else toast_create('danger','Sinh viên ID = '.$username.' không tồn tại');
         // làm mới trang
         header('Location:'.URL_ADMIN.'quan-li-sinh-vien');
         exit;
@@ -34,8 +34,8 @@ if(isset($_arrayURL[1]) && $_arrayURL[1] == 'khoi-phuc') {
         // kiểm tra username có tồn tại không
         if(check_user_exist_by_status($username,0)) {
             update_status_user($username,1);
-            toast_create('success','Khôi phục thành công user với ID = '.$username);
-        }else toast_create('danger','Bài viết ID = '.$username.' không tồn tại');
+            toast_create('success','Khôi phục thành công sinh viên với ID = '.$username);
+        }else toast_create('danger','Sinh viên ID = '.$username.' không tồn tại');
         // làm mới trang
         header('Location:'.URL_ADMIN.'quan-li-sinh-vien/danh-sach-xoa');
         exit;
