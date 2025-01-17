@@ -43,16 +43,16 @@
                     ?>
                         <tr>
                             <td>
+                                <div class="mb-2">
+                                    <a class="text-muted" href="<?=URL_ADMIN?>chi-tiet-do-an/<?=$slug_project?>"><strong><?= $name_project ?></strong></a>
+                                </div>
                                 <div class="d-flex align-items-center">
-                                    <div>
-                                        <img width="60" class="me-3" src="<?= ($image_project) ? URL.$image_project : DEFAULT_IMG_BLOG ?>">
-                                    </div>
-                                    <div>
-                                        <div class="text-muted small"><strong><?= $name_project ?></strong></div>
-                                        <div class="text-muted small">
+                                    <img width="80" class="me-3" src="<?= ($image_project) ? URL.$image_project : DEFAULT_IMG_BLOG ?>">
+                                    <div class="text-muted small">
+                                        <div class="small">
                                             Ngày đăng kí : <?= format_time($created_at,'DD/MM/YYYY lúc hh:mm:ss') ?>
                                         </div>
-                                        <div class="text-muted small">
+                                        <div class="small">
                                             Ngày cập nhật : <?= $updated_at ? format_time($updated_at,'DD/MM/YYYY lúc hh:mm:ss') : 'Chưa cập nhật' ?>
                                         </div>
                                     </div>
