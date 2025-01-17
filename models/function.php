@@ -53,7 +53,7 @@ function model($type,$name_model) {
     if(file_exists('models/'.$type.'/'.$name_model.'.php')) {
         require_once 'models/'.$type.'/'.$name_model.'.php';
     }else {
-        die(_s_me_error.'Model <strong> '.$name_model.'</strong> mà bạn khai báo không được tìm thấy tại :<br> <strong>path : models/'.$type.'/'.$name_model.'php</strong>'._e_me_error);
+        die(_s_me_error.'Model <strong> '.$name_model.'</strong> mà bạn khai báo không được tìm thấy tại :<br> <strong>path : models/'.$type.'/'.$name_model.'.php</strong>'._e_me_error);
     }
 }
 
