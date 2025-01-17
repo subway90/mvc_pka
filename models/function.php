@@ -281,21 +281,6 @@ function check_one_exist($table,$field,$value) {
     return 0;
 }
 
-/**
- * Hàm này kiểm tra một field nào đó có value tồn tại hay không
- * @param $table Tên bảng cần kiểm tra
- * @param $status Trạng thái cần kiểm tra
- * @param $field Tên field cần kiểm tra
- * @param $value Giá trị cần kiểm tra
- * @return boolean TRUE nếu tồn tại, ngược lại FALSE khi không tồn tại
- */
-function check_one_exist_by_status($table,$status,$field,$value) {
-    $result = pdo_query_one(
-        'SELECT '.$field.' FROM '.$table.' WHERE '.$field.' ="'.$value.'" AND status = '.$status
-    );
-    if($result) return 1;
-    return 0;
-}
 
 /**
  * Tạo mã ngẫu nhiên độ dài 24, thích hợp cho làm id
