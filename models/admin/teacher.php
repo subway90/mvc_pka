@@ -20,7 +20,7 @@ function get_list_teacher() {
 
 function get_one_teacher($username) {
     return pdo_query_one(
-        'SELECT u.username username, u.full_name full_name, u.email email, u.address address, u.avatar avatar, u.phone phone, u.created_at created_at, m.name_major name_major, d.name_degree name_degree, p.name_position name_position 
+        'SELECT u.username username, u.full_name full_name, u.email email, u.address address, u.avatar avatar, u.phone phone, u.created_at created_at, u.updated_at updated_at, m.name_major name_major, m.id_major id_major, d.name_degree name_degree, d.id_degree id_degree, p.name_position name_position, p.id_position id_position 
         FROM teacher t
         JOIN user u
         ON u.username = t.username
