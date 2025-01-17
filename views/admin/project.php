@@ -16,7 +16,6 @@
                         <?php if(isset($_GET['blocklist'])) {?>
                             <a href="<?=URL_ADMIN?>quan-li-sinh-vien" class="btn btn-outline-success">Danh sách hoạt động</a>
                         <?php } else {?>
-                            <a href="<?=URL_ADMIN?>them-sinh-vien" class="btn btn-outline-primary me-3"><i class="fa fas fa-plus me-2"></i> Thêm</a>
                             <a href="<?=URL_ADMIN?>quan-li-sinh-vien/danh-sach-xoa" class="btn btn-outline-danger"><i class="fa fas fa-trash me-2"></i>Danh sách xoá</a>
                         <?php }?>
                     </div>
@@ -74,15 +73,14 @@
                             </td>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <img class="rounded-circle me-3" width="35" src="<?=$student_avatar ? URL.$student_avatar : DEFAULT_IMG_USER?>">
-                                    <a class="text-muted fw-bold" href="<?=URL_ADMIN?>/chi-tiet-sinh-vien/<?=$student_username?>">
-                                        <?= $student_name  ?> 
+                                    <img class="rounded-circle me-3" width="35" src="<?=$teacher_avatar ? URL.$teacher_avatar : DEFAULT_IMG_USER?>">
+                                    <a class="text-muted fw-bold" href="<?=URL_ADMIN?>/chi-tiet-giang-vien/<?=$teacher_username?>">
+                                        <?= $teacher_name  ?> 
                                     </a>
                                 </div>
                                 <div class="mt-3">
-                                    <div class="text-muted small"> <strong>Mã số:</strong> <?= $student_username ?></div>
-                                    <div class="text-muted small"> <strong>Email:</strong> <?= $student_email ?></div>
-                                    <div class="text-muted small"> <strong>Ngành:</strong> <?= $name_major ?></div>
+                                    <div class="text-muted small"> <strong>Mã số:</strong> <?= $teacher_username ?></div>
+                                    <div class="text-muted small"> <strong>Email:</strong> <?= $teacher_email ?></div>
                                 </div>
                             </td>
                             <td><?= ($status_project == 2) ? '<div class="badge badge-sa-success">Đã duyệt</div>' : '<div class="badge badge-sa-warning">Chưa duyệt</div>'?></td>
