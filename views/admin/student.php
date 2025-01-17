@@ -76,10 +76,10 @@
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="customer-context-menu-0">
                                         <li><a class="dropdown-item text-warning" href="<?=URL_ADMIN?>chi-tiet-sinh-vien/<?=$username?>">Xem chi tiết</a></li>
                                         <li><hr class="dropdown-divider"/></li>
-                                        <?php if(!isset($_GET['blocklist'])) {?>
-                                        <li><a class="dropdown-item text-danger" href="<?=URL_ADMIN?>chi-tiet-sinh-vien&/<?=$username?>">Cấm tài khoản</a></li>
+                                        <?php if($status_page) {?>
+                                        <li><a class="dropdown-item text-danger" href="<?=URL_ADMIN?>quan-li-sinh-vien/xoa/<?=$username?>">Xoá tài khoản</a></li>
                                         <?php }else{?>
-                                        <li><a class="dropdown-item text-success" href="<?=URL_ADMIN?>chi-tiet-sinh-vien/<?=$username?>">Mở tài khoản</a></li>
+                                        <li><a class="dropdown-item text-success" href="<?=URL_ADMIN?>quan-li-sinh-vien/khoi-phuc/<?=$username?>">Khôi phục tài khoản</a></li>
                                         <?php }?>
                                     </ul>
                                 </div>
