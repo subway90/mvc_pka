@@ -9,12 +9,14 @@
                             <ol class="breadcrumb breadcrumb-sa-simple">
                                 <li class="breadcrumb-item"><a href="<?=URL_ADMIN?>">Quản lí</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Quản lí sinh viên</li>
-                                <li class="breadcrumb-item active" aria-current="page"><?= 'Danh sách hoạt động' ?></li>
+                                <?php if(!$status_page) { ?>
+                                <li class="breadcrumb-item active" aria-current="page">Danh sách xoá</li>
+                                <?php }?>
                             </ol>
                         </nav>
                     </div>
                     <div class="col-auto d-flex">
-                        <?php if(isset($_GET['blocklist'])) {?>
+                        <?php if(!$status_page) {?>
                             <a href="<?=URL_ADMIN?>quan-li-sinh-vien" class="btn btn-outline-success">Danh sách hoạt động</a>
                         <?php } else {?>
                             <a href="<?=URL_ADMIN?>them-sinh-vien" class="btn btn-outline-primary me-3"><i class="fa fas fa-plus me-2"></i> Thêm</a>
