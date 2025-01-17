@@ -32,8 +32,7 @@
                     <thead>
                         <tr>
                             <th class="w-w-5x">Mã số</th>
-                            <th class="min-w-10x">Họ tên</th>
-                            <th class="min-w-10x">Thông tin</th>
+                            <th class="min-w-15x">Avatar | Thông tin</th>
                             <th class="">SĐT</th>
                             <th class="min-w-10x">Email</th>
                             <th class="min-w-10x">Địa chỉ</th>
@@ -50,23 +49,20 @@
                                 <a class="small" href="<?=URL_ADMIN?>chi-tiet-giang-vien/<?=$username?>"><?= $username ?></a>
                              </td>
                             <td>
-                                <div class="d-flex align-items-center">
-                                    <img width="50" class="me-3" src="<?= ($avatar) ? URL.$avatar : DEFAULT_IMG_USER ?>">
-                                    <div class="">
-                                        <a class="text-muted"><strong><?= $full_name ?></strong></a>
-                                        <div class="text-muted small"><strong>Giới tính : </strong> <?= 'loading...' ?></div>
+                                <div class="d-flex align-items-start">
+                                    <img width="50" class="" src="<?= ($avatar) ? URL.$avatar : DEFAULT_IMG_USER ?>">
+                                    <div class="border-start ms-4 ps-4">
+                                        <a href="<?=URL_ADMIN?>chi-tiet-giang-vien/<?=$username?>" class="text-muted"><strong><?= $full_name ?></strong></a>
+                                        <div class="text-muted small"> <strong>Ngành:</strong> <?= $name_major ?></div>
+                                        <div class="text-muted small"> <strong>Học vị:</strong> <?= $name_degree ?></div>
+                                        <div class="text-muted small"> <strong>Chức vụ:</strong> <?= $name_position ?></div>
+                                        <div class="text-muted small"> <strong>Ngày tham gia:</strong> <?= format_time($created_at,'DD tháng MM năm YYYY') ?></div>
                                     </div>
                                 </div>
                             </td>
-                            <td>
-                                <div class="text-muted small"> <strong>Ngành:</strong> <?= $name_major ?></div>
-                                <div class="text-muted small"> <strong>Học vị:</strong> <?= $name_degree ?></div>
-                                <div class="text-muted small"> <strong>Chức vụ:</strong> <?= $name_position ?></div>
-                                <div class="text-muted small"> <strong>Ngày tạo:</strong> <?= format_time($created_at,'DD tháng MM năm YYYY') ?></div>
-                            </td>
-                            <td class="text-nowrap"> <?= $phone ?? '<span class="text-muted small">trống</span>' ?> </td>
-                            <td><?= $email ?? '<span class="text-muted small">trống</span>' ?></td>
-                            <td><?= $address ?? '<span class="text-muted small">trống</span>'?></td>
+                            <td><?= empty($phone) ? '<span class="text-muted small">trống</span>' : '<span class="text-muted small">'.$phone.'</span>' ?? '<span class="text-muted small">trống</span>' ?> </td>
+                            <td><?= empty($email) ? '<span class="text-muted small">trống</span>' : '<span class="text-muted small">'.$email.'</span>' ?></td>
+                            <td><?= empty($address) ? '<span class="text-muted small">trống</span>' : '<span class="text-muted small">'.$address.'</span>' ?></td>
                             <td>
                                 <div class="dropdown">
                                     <button class="btn btn-sa-muted btn-sm" type="button" id="customer-context-menu-0" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More">
