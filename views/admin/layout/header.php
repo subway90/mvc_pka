@@ -68,6 +68,15 @@
                                         <span class="sa-nav__title">Quản lí sinh viên</span>
                                     </a>
                                 </li>
+                                <!-- Project Case -->
+                                <li class="sa-nav__menu-item sa-nav__menu-item--has-icon">
+                                    <a href="<?=URL_ADMIN?>quan-li-do-an" class="sa-nav__link <?=($page=='project') ? 'bg-dark' : ''?>">
+                                        <span class="sa-nav__icon">
+                                            <i class="fas fa-folder"></i>
+                                        </span>
+                                        <span class="sa-nav__title">Quản lí đồ án</span>
+                                    </a>
+                                </li>
                                 <!-- Blog Case -->
                                 <li class="sa-nav__menu-item sa-nav__menu-item--has-icon" data-sa-collapse-item="sa-nav__menu-item--open">
                                     <a href="#" class="sa-nav__link" data-sa-collapse-trigger="">
@@ -77,7 +86,7 @@
                                     </a>
                                     <ul class="sa-nav__menu sa-nav__menu--sub" data-sa-collapse-content="">
                                     <?php
-                                    $list_category_blog = pdo_query('SELECT * FROM category_blog WHERE status = 1');
+                                    $list_category_blog = pdo_query('SELECT * FROM category_blog WHERE status_category = 1');
                                     foreach ($list_category_blog as $category) {
                                     ?>
                                         <li class="sa-nav__menu-item sa-nav__menu-item--has-icon <?=($category['slug_category']==$slug_category) ? 'bg-dark' : ''?>">

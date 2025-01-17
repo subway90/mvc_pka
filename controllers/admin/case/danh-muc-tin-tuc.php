@@ -21,7 +21,7 @@ if(isset($_arrayURL[2]) && $_arrayURL[2] == 'xoa') {
         // kiểm tra ID có phải là số không
         if(is_numeric($id_blog)) {
             // kiểm tra ID có tồn tại không
-            if(check_one_exist_by_status('blog',1,'id_blog',$id_blog)) {
+            if(check_status_blog($id_blog)) {
                 pdo_execute('UPDATE blog SET status = 0 WHERE id_blog ='.$id_blog);
                 toast_create('success','Xoá thành công tin tức ID = '.$id_blog);
             }else toast_create('danger','Bài viết ID = '.$id_blog.' không tồn tại');
@@ -43,7 +43,7 @@ if(isset($_arrayURL[2]) && $_arrayURL[2] == 'khoi-phuc') {
         // kiểm tra ID có phải là số không
         if(is_numeric($id_blog)) {
             // kiểm tra ID có tồn tại không
-            if(check_one_exist_by_status('blog',0,'id_blog',$id_blog)) {
+            if(!check_status_blog($id_blog)) {
                 pdo_execute('UPDATE blog SET status = 1 WHERE id_blog ='.$id_blog);
                 toast_create('success','Khôi phục thành công tin tức ID = '.$id_blog);
             }else toast_create('danger','Bài viết ID = '.$id_blog.' không tồn tại');

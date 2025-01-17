@@ -17,6 +17,18 @@ function check_name_blog_exist($name_blog,$slug_category) {
     );
 }
 
+
+/**
+ * Hàm này kiểm tra một field nào đó có value tồn tại hay không
+ * @param $id ID Blog cần kiểm tra
+ * @return string Trạng thái của blog (0: ẩn, 1: hoạt động)
+ */
+function check_status_blog($id) {
+    return pdo_query_one(
+        'SELECT status_blog FROM blog WHERE id_blog ='.$id
+    );
+}
+
 /**
  * Hàm này để lấy danh sách tin tức theo ID Category và Trạng thái
  * @param mixed $id_category ID Danh mục
@@ -28,7 +40,7 @@ function list_blog($id_category,$status) {
     pdo_query('SELECT * 
     FROM blog
     WHERE id_category = '.$id_category.'
-    AND status = '.$status.'
+    AND status_blog = '.$status.'
     ORDER BY created_at DESC');
 }
 

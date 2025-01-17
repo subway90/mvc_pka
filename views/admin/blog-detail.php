@@ -61,7 +61,7 @@
                                             <label for="titleNews">Tên bài viết</label>
                                         </div>
                                         <div class="col-12 form-floating">
-                                            <textarea name="short_description" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 200"><?=$short_description?></textarea>
+                                            <textarea name="short_description" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 170px"><?=$short_description?></textarea>
                                             <label for="floatingTextarea2">Mô tả ngắn</label>
                                         </div>
                                     </div>

@@ -72,7 +72,6 @@ $data = [
     'name_blog' => $name_blog,
     'slug_blog' => $slug_blog,
     'image_old' => $image_old,
-    'status' => $status,
     'description' => $description,
     'short_description' => $short_description,
     'list_category_blog' => pdo_query('SELECT * FROM category_blog'),
