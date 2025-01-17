@@ -1,6 +1,6 @@
 <?php
 
-function get_list_teacher() {
+function get_list_teacher($status) {
     return pdo_query(
         'SELECT u.username username, u.full_name full_name, u.email email, u.address address, u.avatar avatar, u.phone phone, u.created_at created_at, m.name_major name_major, d.name_degree name_degree, p.name_position name_position 
         FROM teacher t
@@ -12,7 +12,7 @@ function get_list_teacher() {
         ON d.id_degree = t.id_degree
         JOIN position p
         ON p.id_position = t.id_position
-        WHERE u.status = 1
+        WHERE u.status = '.$status.'
         ORDER BY u.created_at DESC
     '
     );

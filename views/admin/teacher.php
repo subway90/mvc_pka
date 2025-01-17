@@ -8,13 +8,13 @@
                         <nav class="mb-2" aria-label="breadcrumb">
                             <ol class="breadcrumb breadcrumb-sa-simple">
                                 <li class="breadcrumb-item"><a href="<?=URL_ADMIN?>">Quản lí</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Quản lí giang viên</li>
-                                <li class="breadcrumb-item active" aria-current="page"><?= 'Danh sách hoạt động' ?></li>
+                                <li class="breadcrumb-item active" aria-current="page">Quản lí giảng viên</li>
+                                <li class="breadcrumb-item active" aria-current="page"><?= $status_page ? 'Danh sách hoạt động' : 'Danh sách xoá' ?></li>
                             </ol>
                         </nav>
                     </div>
                     <div class="col-auto d-flex">
-                        <?php if(isset($_GET['blocklist'])) {?>
+                        <?php if(!$status_page) {?>
                             <a href="<?=URL_ADMIN?>quan-li-giang-vien" class="btn btn-outline-success">Danh sách hoạt động</a>
                         <?php } else {?>
                             <a href="<?=URL_ADMIN?>them-giang-vien" class="btn btn-outline-primary me-3"><i class="fa fas fa-plus me-2"></i> Thêm</a>
@@ -50,7 +50,7 @@
                              </td>
                             <td>
                                 <div class="d-flex align-items-start">
-                                    <img width="50" class="" src="<?= ($avatar) ? URL.$avatar : DEFAULT_IMG_USER ?>">
+                                    <img width="80" class="my-auto" src="<?= ($avatar) ? URL.$avatar : DEFAULT_IMG_USER ?>">
                                     <div class="border-start ms-4 ps-4">
                                         <a href="<?=URL_ADMIN?>chi-tiet-giang-vien/<?=$username?>" class="text-muted"><strong><?= $full_name ?></strong></a>
                                         <div class="text-muted small"> <strong>Ngành:</strong> <?= $name_major ?></div>
@@ -73,10 +73,10 @@
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="customer-context-menu-0">
                                         <li><a class="dropdown-item text-warning" href="<?=URL_ADMIN?>chi-tiet-giang-vien/<?=$username?>">Xem chi tiết</a></li>
                                         <li><hr class="dropdown-divider"/></li>
-                                        <?php if(!isset($_GET['blocklist'])) {?>
-                                        <li><a class="dropdown-item text-danger" href="<?=URL_ADMIN?>chi-tiet-giang-vien&/<?=$username?>">Cấm tài khoản</a></li>
+                                        <?php if($status_page) {?>
+                                        <li><a class="dropdown-item text-danger" href="<?=URL_ADMIN?>quan-li-giang-vien/xoa/<?=$username?>">Xoá tài khoản</a></li>
                                         <?php }else{?>
-                                        <li><a class="dropdown-item text-success" href="<?=URL_ADMIN?>chi-tiet-giang-vien/<?=$username?>">Mở tài khoản</a></li>
+                                        <li><a class="dropdown-item text-success" href="<?=URL_ADMIN?>quan-li-giang-vien/khoi-phuc/<?=$username?>">Khôi phục tài khoản</a></li>
                                         <?php }?>
                                     </ul>
                                 </div>
