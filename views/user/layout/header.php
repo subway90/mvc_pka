@@ -48,26 +48,15 @@
 
             <nav id="navmenu" class="navmenu">
                 <ul>
+                    <!-- Home Case -->
                     <li><a href="<?= URL ?>trang-chu" class="<?= ($page == 'home') ? 'active' : '' ?>">Trang chủ</a></li>
-                    <li><a href="<?= URL ?>tin-tuc" class="<?= ($page == 'blog') ? 'active' : '' ?>">Tin tức</a></li>
-                    <li class="dropdown"><a href="about.html"><span>About</span> <i
-                                class="bi bi-chevron-down toggle-dropdown"></i></a>
-                        <ul>
-                            <li><a href="team.html">Team</a></li>
-                            <li><a href="testimonials.html">Testimonials</a></li>
-                            <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
-                                        class="bi bi-chevron-down toggle-dropdown"></i></a>
-                                <ul>
-                                    <li><a href="#">Deep Dropdown 1</a></li>
-                                    <li><a href="#">Deep Dropdown 2</a></li>
-                                    <li><a href="#">Deep Dropdown 3</a></li>
-                                    <li><a href="#">Deep Dropdown 4</a></li>
-                                    <li><a href="#">Deep Dropdown 5</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
+                    <!-- Category Case -->
+                    <?php
+                    foreach (pdo_query('SELECT slug_category, name_category FROM category_blog WHERE status_category') as $category) { ?>
+                    <li><a href="<?= URL ?>danh-muc/<?=$category['slug_category']?>" class="<?= ($category['slug_category'] == $slug_category) ? 'active' : '' ?>"><?=$category['name_category']?></a></li>
+                    <?php }?>
                     <?php if (author('student')) { ?>
+                    <!-- Account Case -->
                     <li class="dropdown">
                         <a href="#">
                             <span>
