@@ -48,8 +48,17 @@
 
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <!-- Home Case -->
-                    <li><a href="<?= URL ?>trang-chu" class="<?= ($page == 'home') ? 'active' : '' ?>">Trang chủ</a></li>
+                    <!--Search Form -->
+                    <li class="me-lg-2 px-lg-0 px-3">
+                        <div class="search-widget widget-item">
+                            <div class="search-widget">
+                                <form action="">
+                                    <input type="text">
+                                    <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
                     <!-- Category Case -->
                     <?php
                     foreach (pdo_query('SELECT slug_category, name_category FROM category_blog WHERE status_category') as $category) { ?>
