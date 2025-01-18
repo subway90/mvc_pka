@@ -64,7 +64,7 @@
                     foreach (pdo_query('SELECT slug_category, name_category FROM category_blog WHERE status_category') as $category) { ?>
                     <li><a href="<?= URL ?>danh-muc/<?=$category['slug_category']?>" class="<?= ($category['slug_category'] == $slug_category) ? 'active' : '' ?>"><?=$category['name_category']?></a></li>
                     <?php }?>
-                    <?php if (author('student')) { ?>
+                    <?php if ($_SESSION['user']) { ?>
                     <!-- Account Case -->
                     <li class="dropdown">
                         <a href="#">
@@ -79,7 +79,7 @@
                                 <li><a href="<?=URL_ADMIN?>">Trang quản trị</a></li>
                                 <?php }?>
                                 <li><a href="#">Trang cá nhân</a></li>
-                                <li><a href="#">Đồ án</a></li>
+                                <li><a href="<?=URL?>do-an">Đồ án</a></li>
                                 <hr>
                                 <li><a href="<?=URL?>dang-xuat">Đăng xuất</a></li>
                             </ul>
