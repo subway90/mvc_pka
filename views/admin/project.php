@@ -92,8 +92,8 @@
                                         </svg>
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="customer-context-menu-0">
-                                        <li><a class="dropdown-item text-warning" href="<?=URL_ADMIN?>chi-tiet-sinh-vien/<?=$username?>">Xem chi tiết</a></li>
-                              d        <li><hr class="dropdown-divider"/></li>
+                                        <li><a class="dropdown-item text-warning" href="<?=URL_ADMIN?>chi-tiet-do-an/<?=$slug_project?>">Xem chi tiết</a></li>
+                                        <li><hr class="dropdown-divider"/></li>
                                         <?php if(!isset($_GET['blocklist'])) {?>
                                         <li><a class="dropdown-item text-danger" href="<?=URL_ADMIN?>chi-tiet-sinh-vien&/<?=$username?>">Cấm tài khoản</a></li>
                                         <?php }else{?>
