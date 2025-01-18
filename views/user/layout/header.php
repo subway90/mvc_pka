@@ -79,7 +79,9 @@
                                 <li><a href="<?=URL_ADMIN?>">Trang quản trị</a></li>
                                 <?php }?>
                                 <li><a href="#">Trang cá nhân</a></li>
+                                <?php if(author('student')) { ?>
                                 <li><a href="<?=URL?>do-an">Đồ án</a></li>
+                                <?php }?>
                                 <hr>
                                 <li><a href="<?=URL?>dang-xuat">Đăng xuất</a></li>
                             </ul>
