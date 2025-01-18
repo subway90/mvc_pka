@@ -42,11 +42,11 @@ if(isset($_POST['create'])) {
     if($error) toast_create('danger',$error[0]);
     //tạo người dùng
     else {
-        $stmt = pdo_get_connection()->prepare('INSERT INTO blog (id_category, id_user, name_blog, slug_blog, short_description, description, image) VALUES (?, ?, ?, ?, ?, ?, ?)');
+        $stmt = pdo_get_connection()->prepare('INSERT INTO blog (id_category, username, name_blog, slug_blog, short_description, description, image) VALUES (?, ?, ?, ?, ?, ?, ?)');
         // Thực hiện lệnh với các tham số
         $stmt->execute([
             $category_blog['id_category'],
-            $_SESSION['user']['id_user'],
+            $_SESSION['user']['username'],
             $name_blog,
             create_slug($name_blog),
             $short_description,
