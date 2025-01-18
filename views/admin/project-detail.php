@@ -1,5 +1,5 @@
 <div id="top" class="sa-app__body">
-<form action="<?=URL_ADMIN?>chi-tiet-do-an/<?=$username?>" method="post" enctype="multipart/form-data">
+<form action="<?=URL_ADMIN?>chi-tiet-do-an/<?=$slug_project?>" method="post" enctype="multipart/form-data">
     <div class="mx-sm-2 px-2 px-sm-3 px-xxl-4 pb-6">
                     <div class="container container--max--xl">
                         <div class="py-5">
@@ -41,7 +41,7 @@
                                                 <label for="color">Tên đề tài <span class="text-danger">&#10033;</span></label>
                                             </div>
                                             <div class="col-12 form-floating px-1 mb-2 pb-3">
-                                                <textarea style="height:100%" name="full_ndescription_projectame" type="text" class="form-control" id="color" placeholder="name@example.com"><?=$description_project?></textarea>
+                                                <textarea style="height:100%" name="description_project" type="text" class="form-control" id="color" placeholder="name@example.com"><?=$description_project?></textarea>
                                                 <label for="color">Mô tả <span class="text-danger">&#10033;</span></label>
                                             </div>
                                             <?php if($document_project) { ?>
