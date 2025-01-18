@@ -26,8 +26,7 @@ if(isset($_POST['login'])) {
                 // Đăng nhập thành công
                 if(md5($password) == $get_user['password']) {
                     $_SESSION['user'] = $get_user;
-                    // Chuyển hướng theo role
-                    if($_SESSION['user']['role'] == 0) {
+                    if(author('admin')) {
                         header('Location: '.URL.'admin');
                         toast_create('success','<i class="bi bi-check-circle me-2"></i> Đăng nhập thành công');
                         exit;
