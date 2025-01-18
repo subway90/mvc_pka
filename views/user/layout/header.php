@@ -78,6 +78,9 @@
                                 <?php if(author('admin')) { ?>
                                 <li><a href="<?=URL_ADMIN?>">Trang quản trị</a></li>
                                 <?php }?>
+                                <?php if(author('teacher')) { ?>
+                                <li><a href="<?=URL_TEACHER?>">Trang quản trị</a></li>
+                                <?php }?>
                                 <li><a href="#">Trang cá nhân</a></li>
                                 <?php if(author('student')) { ?>
                                 <li><a href="<?=URL?>do-an">Đồ án</a></li>
