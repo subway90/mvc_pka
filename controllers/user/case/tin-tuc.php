@@ -9,8 +9,11 @@ if(isset($_arrayURL[1]) &&$_arrayURL[1]) {
     $blog_category = $_arrayURL[1];
     // kiểm tra category có tồn tại hay không
     $get_blog = get_one_blog($blog_category);
+    //chuyển 404 nếu không tìm thấy tin tức
     if(!$get_blog) view_404('user');
+    // giải nén và + lượt xem
     else extract($get_blog);
+    blog_view_count($id_blog);
 }else view_404('user');
 
 

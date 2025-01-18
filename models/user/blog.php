@@ -43,3 +43,7 @@ function get_one_blog($slug) {
 function blog_recommend($id_category,$id_blog) {
     return  pdo_query('SELECT * FROM blog b JOIN user u ON b.username = u.username WHERE b.id_category = '.$id_category.' AND b.id_blog != '.$id_blog );
 }
+
+function blog_view_count($id_blog) {
+    pdo_execute('UPDATE blog SET view = view+1 WHERE id_blog = '.$id_blog);
+}
